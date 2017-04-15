@@ -8,13 +8,7 @@ import { FlotComponent } from "app/charts/flot/flot.component";
 const routes: Routes = [
   { path:'dashboard', component:DashboardComponent },
   { path:'cards/:type', component:CardsComponent },
-  { path:'charts',
-    children:[
-      { path:'', redirectTo:'flot', pathMatch:'full' },
-      { path:'flot', component:FlotComponent },
-      { path:'radial', component:RadialComponent },
-    ]
-  },
+
 ];
 
 @NgModule({

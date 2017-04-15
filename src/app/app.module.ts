@@ -7,8 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
-import { FlotComponent } from './charts/flot/flot.component';
-import { RadialComponent } from './charts/radial/radial.component';
+import { ChartsModule } from './charts/charts.module';
 
 
 @NgModule({
@@ -16,13 +15,13 @@ import { RadialComponent } from './charts/radial/radial.component';
     AppComponent,
     DashboardComponent,
     CardsComponent,
-    FlotComponent,
-    RadialComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ChartsModule,
     AppRoutingModule
   ],
   providers: [],
