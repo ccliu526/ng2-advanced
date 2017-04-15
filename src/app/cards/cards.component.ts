@@ -8,16 +8,17 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class CardsComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
   type = 0;
 
   ngOnInit() {
-    this.type = this.activatedRoute.snapshot.params['type'];
+    //this.type = this.route.snapshot.params['type'];
+    this.route.params.subscribe( params => this.type = +params['type'])
   }
 
-  addType(num: number) {
-    this.type = +this.type + num ;
-    this.router.navigateByUrl('/cards/'+this.type);
-  }
+  // addType(num: number) {
+  //   this.type = +this.type + num ;
+  //   this.router.navigateByUrl('/cards/'+this.type);
+  // }
 
 }
