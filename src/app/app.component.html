@@ -2,7 +2,7 @@
   {{title}}
 </h1>
 <ul>
-  <li><a [routerLink]="['/home']">HOME</a></li>
-  <li><a [routerLink]="['/layout']">LAYOUT</a></li>
+  <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">LAYOUT</a></li>
+  <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">HOME</a></li>
 </ul>
 <router-outlet></router-outlet>
