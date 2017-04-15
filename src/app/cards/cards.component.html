@@ -31,7 +31,7 @@
                   <div class="col-sm-6 col-xs-12">
                     <div class="card">
                       <div class="card-heading bg-primary">
-                        <div class="card-title">Paracosm</div>
+                        <div class="card-title">Matrix: m1 = {{ m1 }}</div>
                       </div>
                       <div class="card-offset">
                         <div class="card-offset-item text-right">
@@ -39,11 +39,11 @@
                         </div>
                       </div>
                       <div class="card-body pt0">
-                        <p class="mb-sm">Cras rutrum scelerisque auctor. Donec ultricies blandit venenatis. Nulla facilisi. Praesent diam diam, venenatis lorem par.</p>
+                        <p class="mb-sm">Query String: q1 = {{ q1 }}</p>
                       </div>
                       <div class="card-footer">
-                        <button type="button" class="btn btn-flat btn-default">Action 1</button>
-                        <button type="button" class="btn btn-flat btn-default">Action 2</button>
+                        <button type="button" [routerLink]="['/cards/100', {m1:123}]" class="btn btn-flat btn-default">Action 1</button>
+                        <button type="button" [routerLink]="['/cards/100']" [queryParams] = "{q1: 456}" class="btn btn-flat btn-default">Action 2</button>
                       </div>
                     </div>
                   </div>
