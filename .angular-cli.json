@@ -8,6 +8,7 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
+        "login.html",
         "dashboard.html",
         "cards.html",
         "flot.html",
