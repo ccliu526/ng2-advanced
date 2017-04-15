@@ -10,6 +10,8 @@
       "assets": [
         "dashboard.html",
         "cards.html",
+        "flot.html",
+        "radial.html",
         "assets",
         "favicon.ico"
       ],
