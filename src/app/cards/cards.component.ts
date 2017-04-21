@@ -22,6 +22,10 @@ export class CardsComponent implements OnInit {
     })
   }
 
+  ngAfterContentInit(){
+    this.liveNumber=this.type;
+  }
+  liveNumber=0;
   // addType(num: number) {
   //   this.type = +this.type + num ;
   //   this.router.navigateByUrl('/cards/'+this.type);
