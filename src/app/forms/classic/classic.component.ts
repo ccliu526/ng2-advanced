@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators, AbstractControl } from "@angular/forms";
+import{mustHaveWillValidator} from '../../shared/must-have-will-validator'
 
-
-function mustHaveWillValidator(control: AbstractControl) {
-  if (control.value.indexOf('Will') > -1) {
-    return null;
-  } else {
-    return {
-      'must-have-will': true
-    };
-  }
-}
 @Component({
   selector: 'app-classic',
   templateUrl: './classic.component.html',
