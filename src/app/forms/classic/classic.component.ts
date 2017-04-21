@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({
   selector: 'app-classic',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassicComponent implements OnInit {
   data:any = {};
-  constructor() {
+  form: FormGroup;
+  constructor(private fb:FormBuilder) {
 
    }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      title:"default title",
+      summary:"default title"
+    })
   }
 
   doSubmit(f){
