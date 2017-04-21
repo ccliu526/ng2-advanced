@@ -7,7 +7,7 @@
                 <form method="get" action="/" class="form-horizontal">
                   <fieldset>
                     <div class="form-group">
-                      <label class="col-sm-2 control-label">Rounded Corners</label>
+                      <label class="col-sm-2 control-label">Title</label>
                       <div class="col-sm-10" [class.has-error]="tTitle.invalid && tTitle.dirty">
                         <input type="text" class="form-control rounded"
                         name="title"
@@ -18,12 +18,14 @@
                   </fieldset>
                   <fieldset>
                     <div class="form-group">
-                      <label class="col-sm-2 control-label">With help</label>
+                      <label class="col-sm-2 control-label">Summary</label>
                       <div class="col-sm-10" [class.has-error]="tSummary.invalid && tSummary.dirty">
                         <input type="text" class="form-control"
                         name="summary"
                         [(ngModel)]="data.summary"
-                        #tSummary = "ngModel" maxLength="5"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                        #tSummary = "ngModel" required>
+                        <span class="help-block" *ngIf="tSummary.dirty && tSummary.errors?.required">請填寫 Summary 欄位內容</span>
+                        <pre>{{tSummary.errors | json}}</pre>
                       </div>
                     </div>
                   </fieldset>
