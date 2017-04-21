@@ -1,3 +1,4 @@
+import { LoginGuard } from './login.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Route, PreloadAllModules } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
       { path: 'cards/:type', component: CardsComponent },
       {
         path: 'charts',
-        loadChildren: './charts/charts.module#ChartsModule'
+        loadChildren: './charts/charts.module#ChartsModule',
+        canActivate: [LoginGuard]
       },
 
     ]
