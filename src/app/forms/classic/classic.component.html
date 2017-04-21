@@ -13,8 +13,9 @@
               <label class="col-sm-2 control-label">Title</label>
               <div class="col-sm-10" [class.has-error]="form.controls.title.invalid && f.submitted">
                 <input type="text" class="form-control rounded"
-                formControlName="title"
-                required>
+                formControlName="title">
+                <span class="help-block" *ngIf="form.controls.title.invalid &&  f.submitted">請填寫 Title 欄位內容</span>
+              <pre>{{form.controls.title.errors | json}}</pre>
               </div>
             </div>
           </fieldset>
@@ -23,10 +24,9 @@
               <label class="col-sm-2 control-label">Summary</label>
               <div class="col-sm-10" [class.has-error]="form.controls.summary.invalid && f.submitted">
                 <input type="text" class="form-control"
-                 formControlName="summary"
-                required>
+                 formControlName="summary">
                 <span class="help-block" *ngIf="form.controls.summary.invalid &&  f.submitted">請填寫 Summary 欄位內容</span>
-                <pre></pre>
+                <pre>{{form.controls.summary.errors | json}}</pre>
               </div>
             </div>
           </fieldset>
