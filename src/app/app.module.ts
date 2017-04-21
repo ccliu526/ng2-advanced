@@ -12,6 +12,7 @@ import { ChartsModule } from './charts/charts.module';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ClassicComponent } from './forms/classic/classic.component';
+import { Template1Component } from './template1/template1.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ClassicComponent } from './forms/classic/classic.component';
     LoginComponent,
     LayoutComponent,
     ClassicComponent,
+    Template1Component,
 
   ],
   imports: [
