@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ClassicComponent } from './forms/classic/classic.component';
 import { Template1Component } from './template1/template1.component';
+import { CouterBtnDirective } from './couter-btn.directive';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { Template1Component } from './template1/template1.component';
     LayoutComponent,
     ClassicComponent,
     Template1Component,
+    CouterBtnDirective,
 
   ],
   imports: [
