@@ -4,11 +4,11 @@
             <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
             <div class="card">
               <div class="card-body">
-                <form method="get" action="/" class="form-horizontal">
+                <form (ngSubmit)="doSubmit(f)" method="get" action="/" class="form-horizontal" #f="ngForm">
                   <fieldset>
                     <div class="form-group">
                       <label class="col-sm-2 control-label">Title</label>
-                      <div class="col-sm-10" [class.has-error]="tTitle.invalid && tTitle.dirty">
+                      <div class="col-sm-10" [class.has-error]="tTitle.invalid && f.submitted">
                         <input type="text" class="form-control rounded"
                         name="title"
                         [(ngModel)]="data.title"
@@ -19,19 +19,19 @@
                   <fieldset>
                     <div class="form-group">
                       <label class="col-sm-2 control-label">Summary</label>
-                      <div class="col-sm-10" [class.has-error]="tSummary.invalid && tSummary.dirty">
+                      <div class="col-sm-10" [class.has-error]="tSummary.invalid && f.submitted">
                         <input type="text" class="form-control"
                         name="summary"
                         [(ngModel)]="data.summary"
                         #tSummary = "ngModel" required>
-                        <span class="help-block" *ngIf="tSummary.dirty && tSummary.errors?.required">請填寫 Summary 欄位內容</span>
+                        <span class="help-block" *ngIf="f.submitted && tSummary.errors?.required">請填寫 Summary 欄位內容</span>
                         <pre>{{tSummary.errors | json}}</pre>
                       </div>
                     </div>
                   </fieldset>
 
                     <pre>{{data | json}}</pre>
-
+                    <button type="submit">SUBMIT</button>
                   <fieldset>
                     <div class="form-group">
                       <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>

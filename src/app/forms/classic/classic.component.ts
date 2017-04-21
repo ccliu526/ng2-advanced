@@ -14,4 +14,8 @@ export class ClassicComponent implements OnInit {
   ngOnInit() {
   }
 
+  doSubmit(f){
+    console.log(f);
+  }
+
 }
