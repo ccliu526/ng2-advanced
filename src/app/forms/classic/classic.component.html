@@ -8,19 +8,28 @@
                   <fieldset>
                     <div class="form-group">
                       <label class="col-sm-2 control-label">Rounded Corners</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control rounded" name="title" [(ngModel)]="data.title">
+                      <div class="col-sm-10" [class.has-error]="tTitle.invalid && tTitle.dirty">
+                        <input type="text" class="form-control rounded"
+                        name="title"
+                        [(ngModel)]="data.title"
+                        #tTitle = "ngModel" required>
                       </div>
                     </div>
                   </fieldset>
                   <fieldset>
                     <div class="form-group">
                       <label class="col-sm-2 control-label">With help</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                      <div class="col-sm-10" [class.has-error]="tSummary.invalid && tSummary.dirty">
+                        <input type="text" class="form-control"
+                        name="summary"
+                        [(ngModel)]="data.summary"
+                        #tSummary = "ngModel" maxLength="5"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                       </div>
                     </div>
                   </fieldset>
+
+                    <pre>{{data | json}}</pre>
+
                   <fieldset>
                     <div class="form-group">
                       <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>

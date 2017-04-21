@@ -6,11 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classic.component.css']
 })
 export class ClassicComponent implements OnInit {
-  data:any;
+  data:any = {};
   constructor() {
-    this.data = {
-      title:"aaa"
-    }
+
    }
 
   ngOnInit() {
