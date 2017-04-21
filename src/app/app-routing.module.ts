@@ -1,5 +1,6 @@
+import { ClassicComponent } from './forms/classic/classic.component';
 import { LoginGuard } from './login.guard';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule, Route, PreloadAllModules } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from "app/cards/cards.component";
@@ -17,9 +18,15 @@ const routes: Routes = [
         loadChildren: './charts/charts.module#ChartsModule',
         canActivate: [LoginGuard]
       },
-
+      {
+        path: 'forms',
+        children:[
+          {path:'classic',component:ClassicComponent}
+        ]
+      },
     ]
   },
+
   { path: 'login', component: LoginComponent }
 
 ];

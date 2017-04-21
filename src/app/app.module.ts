@@ -1,7 +1,7 @@
 import { LoginGuard } from './login.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { CardsComponent } from './cards/cards.component';
 import { ChartsModule } from './charts/charts.module';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ClassicComponent } from './forms/classic/classic.component';
 
 
 @NgModule({
@@ -20,11 +21,13 @@ import { LayoutComponent } from './layout/layout.component';
     CardsComponent,
     LoginComponent,
     LayoutComponent,
+    ClassicComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule
   ],
