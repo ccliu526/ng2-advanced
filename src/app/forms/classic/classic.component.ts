@@ -7,33 +7,31 @@ import { FormGroup, FormBuilder, FormArray } from "@angular/forms";
   styleUrls: ['./classic.component.css']
 })
 export class ClassicComponent implements OnInit {
-  data:any = {};
+  data: any = {};
   form: FormGroup;
-  metadataControls: FormArray;
-  constructor(private fb:FormBuilder) {
+  constructor(private fb: FormBuilder) {
 
-   }
+  }
 
   ngOnInit() {
-    let metadataArray  = [
-      this.fb.control('111'),
-      this.fb.control('222')
-    ];
-    this.metadataControls = this.fb.array(metadataArray );
 
     this.form = this.fb.group({
-      title:"default title",
-      summary:"default title",
-      metadata:this.metadataControls
+      title: "default title",
+      summary: "default title",
+      metadata: this.fb.array([
+        this.fb.control('111'),
+        this.fb.control('222')
+      ])
     })
   }
 
-  doSubmit(f){
+  doSubmit(f) {
     console.log(f);
   }
 
-  addInput(){
-    this.metadataControls.insert(0, this.fb.control('TEST'));
+  addInput() {
+    let arr = this.form.get('metadata') as FormArray;
+    arr.push(this.fb.control('TEST'));
   }
 
 }
